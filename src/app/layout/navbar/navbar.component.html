@@ -1,0 +1,41 @@
+<nav [class.hero-navbar]="!isScrolled" [class.general-navbar]="isScrolled">
+    <div class="container mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <a routerLink="/" class="text-primary text-4xl font-extrabold flex items-center font-secondary">
+            <i class="fa fa-utensils mr-3"></i>Restoran
+        </a>
+
+        <!-- Toggle Button for Mobile -->
+        <button class="lg:hidden text-white" (click)="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </button>
+
+        <!-- Links -->
+        <div class="flex flex-row gap-4 font-medium font-primary text-sm">
+            <div class="lg:flex lg:items-center lg:gap-6 lg:static lg:visible lg:h-auto lg:w-auto"
+                [class.hidden]="!menuOpen">
+                <a routerLink="/" class="block py-2 text-white hover:text-primary">HOME</a>
+                <a routerLink="/about" class="block py-2 text-white hover:text-primary">ABOUT</a>
+                <a routerLink="/services" class="block py-2 text-white hover:text-primary">SERVICES</a>
+                <a routerLink="/menu" class="block py-2 text-white hover:text-primary">MENU</a>
+                <!-- Dropdown for Pages -->
+                <div class="relative group">
+                    <button class="block py-2 text-white hover:text-primary">PAGES</button>
+                    <div class="absolute hidden font-normal group-hover:block bg-white shadow-md py-2 mt-1 rounded-md">
+                        <a routerLink="/booking" class="block px-4 py-2 text-black hover:text-primary">Booking</a>
+                        <a routerLink="/team" class="block px-4 py-2 text-black hover:text-primary">Our Team</a>
+                        <a routerLink="/testimonials"
+                            class="block px-4 py-2 text-black hover:text-primary">Testimonials</a>
+                    </div>
+                </div>
+                <a routerLink="/contact" class="block py-2 text-white hover:text-primary">CONTACT</a>
+
+            </div>
+
+            <!-- Book a Table Button -->
+            <a routerLink="/booking" class="bg-primary text-white py-3 px-6 rounded-md font-secondary font-bold">
+                BOOK A TABLE
+            </a>
+        </div>
+    </div>
+</nav>

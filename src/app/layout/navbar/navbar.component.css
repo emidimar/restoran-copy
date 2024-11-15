@@ -1,0 +1,28 @@
+/* Navbar iniziale */
+.hero-navbar {
+    position: absolute;
+    top: 0;
+    padding-top: 20px;
+    margin-left: 100px;
+    width: 1320px;
+    background: transparent;
+    padding-left: 48px;
+    padding-right: 48px;
+}
+
+/* Navbar dopo lo scroll */
+.general-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 48px;
+    padding-right: 48px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 62px;
+    background: #0F172B;
+    /* Colore di sfondo per la navbar generale */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
