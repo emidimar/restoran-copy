@@ -1,1 +1,20 @@
-<p>testimonials works!</p>
+<div class="container mx-auto py-10 px-5">
+    <div class="text-center">
+        <h5 class="text-primary text-lg font-semibold">Testimonial</h5>
+        <h1 class="text-3xl font-bold mb-6">Our Clients Say!!!</h1>
+    </div>
+    <div class="flex overflow-x-auto space-x-4 scrollbar-hide">
+        <div *ngFor="let testimonial of testimonials"
+            class="min-w-[300px] flex-shrink-0 bg-white border rounded-lg p-6 shadow-lg">
+            <i class="fa fa-quote-left fa-2x text-primary mb-4"></i>
+            <p class="mb-4 text-gray-600">{{ testimonial.quote }}</p>
+            <div class="flex items-center space-x-4">
+                <img [src]="testimonial.image" alt="{{ testimonial.name }}" class="w-12 h-12 rounded-full">
+                <div>
+                    <h5 class="text-lg font-semibold">{{ testimonial.name }}</h5>
+                    <small class="text-gray-500">{{ testimonial.profession }}</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

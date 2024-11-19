@@ -1,1 +1,74 @@
-<p>booking works!</p>
+<div class="container mx-auto py-10 px-5">
+    <div class="flex flex-wrap items-center">
+        <!-- Video Section -->
+        <div class="w-full md:w-1/2 relative group">
+            <div class="containerVideo">
+                <button
+                    class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-full w-20 h-20 transition duration-300 group-hover:scale-110"
+                    (click)="openModal()">
+                    <span class="block w-5 h-5 bg-white rounded-full"></span>
+                </button>
+            </div>
+        </div>
+        <!-- Form Section -->
+        <div class="w-full md:w-1/2 bg-gray-800 text-white p-8">
+            <h5 class="text-lg font-semibold text-primary">Reservation</h5>
+            <h1 class="text-3xl font-bold mb-6">Book A Table Online</h1>
+            <form>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Name Input -->
+                    <div>
+                        <label for="name" class="block mb-1 text-sm">Your Name</label>
+                        <input type="text" id="name" placeholder="Your Name"
+                            class="w-full p-3 rounded bg-gray-700 border-none text-white placeholder-gray-400 focus:ring-2 focus:ring-primary" />
+                    </div>
+                    <!-- Email Input -->
+                    <div>
+                        <label for="email" class="block mb-1 text-sm">Your Email</label>
+                        <input type="email" id="email" placeholder="Your Email"
+                            class="w-full p-3 rounded bg-gray-700 border-none text-white placeholder-gray-400 focus:ring-2 focus:ring-primary" />
+                    </div>
+                    <!-- Date & Time -->
+                    <div>
+                        <label for="datetime" class="block mb-1 text-sm">Date & Time</label>
+                        <input type="text" id="datetime" placeholder="Date & Time"
+                            class="w-full p-3 rounded bg-gray-700 border-none text-white placeholder-gray-400 focus:ring-2 focus:ring-primary" />
+                    </div>
+                    <!-- No Of People -->
+                    <div>
+                        <label for="select1" class="block mb-1 text-sm">No Of People</label>
+                        <select id="select1"
+                            class="w-full p-3 rounded bg-gray-700 border-none text-white focus:ring-2 focus:ring-primary">
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                        </select>
+                    </div>
+                    <!-- Special Request -->
+                    <div class="col-span-2">
+                        <label for="message" class="block mb-1 text-sm">Special Request</label>
+                        <textarea id="message" placeholder="Special Request"
+                            class="w-full p-3 rounded bg-gray-700 border-none text-white placeholder-gray-400 focus:ring-2 focus:ring-primary h-24"></textarea>
+                    </div>
+                </div>
+                <!-- Submit Button -->
+                <div class="mt-6">
+                    <button type="submit"
+                        class="w-full py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded transition duration-300">
+                        Book Now
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div *ngIf="isModalOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <div class="bg-white p-4 rounded">
+            <iframe src="https://www.youtube.com/embed/DWRcNpR6Kdc" frameborder="0" class="w-full h-64"
+                allowfullscreen></iframe>
+            <button class="mt-4 bg-primary text-white px-4 py-2 rounded" (click)="closeModal()">Close</button>
+        </div>
+    </div>
+</div>

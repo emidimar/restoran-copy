@@ -7,13 +7,14 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AboutComponent } from './about/about.component';
-import { ServicesComponent } from './services/services.component';
 import { MenuComponent } from './menu/menu.component';
 import { ContactComponent } from './contact/contact.component';
 import { BookingComponent } from './booking/booking.component';
 import { TeamComponent } from './team/team.component';
-import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { HeroComponent } from './hero/hero.component';
+import { InfoCardComponent } from './ui/info-card/info-card.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
+import { ServicesRestorantComponent } from './servicesRestorant/services-restorant/services-restorant.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,14 +22,14 @@ import { HeroComponent } from './hero/hero.component';
     FooterComponent,
     HomepageComponent,
     AboutComponent,
-    ServicesComponent,
     MenuComponent,
     ContactComponent,
     BookingComponent,
     TeamComponent,
     TestimonialsComponent,
-    ServicesComponent,
     HeroComponent,
+    InfoCardComponent,
+    ServicesRestorantComponent,
   ],
   imports: [
     BrowserModule,
