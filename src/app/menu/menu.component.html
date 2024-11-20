@@ -1,1 +1,66 @@
-<p>menu works!</p>
+<div class="container mx-auto py-10">
+    <div class="text-center">
+        <h5 class="text-primary font-medium text-lg">Food Menu</h5>
+        <h1 class="text-3xl font-bold mb-8">Most Popular Items</h1>
+    </div>
+    <div>
+        <ul class="flex justify-center border-b mb-8">
+            <li class="mr-6">
+                <a (click)="selectTab('tab-1')" [class.active]="activeTab === 'tab-1'"
+                    class="flex items-center pb-3 border-b-2 border-transparent hover:border-primary active:border-primary"
+                    data-bs-toggle="pill">
+                    <i class="fas fa-coffee text-primary text-2xl"></i>
+                    <div class="ml-3 text-left">
+                        <small class="block text-gray-500">Popular</small>
+                        <h6 class="font-medium">Breakfast</h6>
+                    </div>
+                </a>
+            </li>
+            <li class="mr-6">
+                <a (click)="selectTab('tab-2')" [class.active]="activeTab === 'tab-2'"
+                    class="flex items-center pb-3 border-b-2 border-transparent hover:border-primary"
+                    data-bs-toggle="pill">
+                    <i class="fas fa-hamburger text-primary text-2xl"></i>
+                    <div class="ml-3 text-left">
+                        <small class="block text-gray-500">Special</small>
+                        <h6 class="font-medium">Lunch</h6>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a (click)="selectTab('tab-3')" [class.active]="activeTab === 'tab-3'"
+                    class="flex items-center pb-3 border-b-2 border-transparent hover:border-primary"
+                    data-bs-toggle="pill">
+                    <i class="fas fa-utensils text-primary text-2xl"></i>
+                    <div class="ml-3 text-left">
+                        <small class="block text-gray-500">Lovely</small>
+                        <h6 class="font-medium">Dinner</h6>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="tab-1" class="tab-pane fade show active">
+                <div *ngIf="activeTab === 'tab-1'" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-center p-4 bg-white shadow rounded">
+                        <img class="w-20 h-20 rounded" src="assets/menu-1.jpg" alt="Menu item">
+                        <div class="ml-4">
+                            <h5 class="flex justify-between items-center border-b pb-2">
+                                <span class="font-medium">Chicken Burger</span>
+                                <span class="text-primary">$115</span>
+                            </h5>
+                            <small class="text-gray-500 italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                        </div>
+                    </div>
+                    <!-- Duplica questa struttura per gli altri articoli -->
+                </div>
+            </div>
+            <div id="tab-2" class="tab-pane fade">
+                <!-- Contenuto del tab 2 -->
+            </div>
+            <div id="tab-3" class="tab-pane fade">
+                <!-- Contenuto del tab 3 -->
+            </div>
+        </div>
+    </div>
+</div>

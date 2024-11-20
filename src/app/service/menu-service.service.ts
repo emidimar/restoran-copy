@@ -1,19 +1,16 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MenuServiceService {
+  private baseUrl = " https://private-anon-653c042e71-pizzaapp.apiary-mock.com";
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getData = async () => {
-    try {
-      let response = await fetch("http://18.194.21.216/api/menu?category=Pizza");
-      let data = await response.json();
-      console.log(data);
-    } catch (error: any) {
-      console.log("Errore: ", error.message);
-    }
+  getMenu(endpoint: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${endpoint}`);
   }
 }
