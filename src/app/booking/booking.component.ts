@@ -18,6 +18,11 @@ export class BookingComponent {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form)
+    if (form.valid) {
+      console.log('Form Submitted');
+      alert('Message Sent!');
+    } else {
+      alert('Please fill out the form correctly.');
+    }
   }
 }
