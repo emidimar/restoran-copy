@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-booking',
@@ -14,5 +15,9 @@ export class BookingComponent {
 
   closeModal() {
     this.isModalOpen = false;
+  }
+
+  onSubmit(form: NgForm) {
+    console.log(form)
   }
 }

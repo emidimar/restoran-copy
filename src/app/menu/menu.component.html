@@ -1,4 +1,4 @@
-<div class="container mx-auto py-10">
+<div class="mx-auto py-10">
     <div class="text-center">
         <h5 class="text-primary font-medium text-lg">Food Menu</h5>
         <h1 class="text-3xl font-bold mb-8">Most Popular Items</h1>
@@ -41,26 +41,44 @@
         </ul>
         <div class="tab-content">
             <div id="tab-1" class="tab-pane fade show active">
-                <div *ngIf="activeTab === 'tab-1'" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="flex items-center p-4 bg-white shadow rounded">
-                        <img class="w-20 h-20 rounded" src="assets/menu-1.jpg" alt="Menu item">
-                        <div class="ml-4">
-                            <h5 class="flex justify-between items-center border-b pb-2">
-                                <span class="font-medium">Chicken Burger</span>
-                                <span class="text-primary">$115</span>
-                            </h5>
-                            <small class="text-gray-500 italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                <div *ngIf="activeTab === 'tab-1'">
+                    <div *ngIf="data.length > 0; else noData">
+                        <div *ngFor="let pizza of data" class="flex items-center p-4 bg-white shadow rounded">
+                            <img class="w-20 h-20 rounded" src="assets/menu-1.jpg" alt="Menu item">
+                            <div class="ml-4">
+                                <h5 class="flex justify-between items-center border-b pb-2">
+                                    <span class="font-medium">{{ pizza.name }}</span>
+                                    <span class="text-primary">${{ pizza.price }}</span>
+                                </h5>
+                                <small class="text-gray-500 italic">Category: {{ pizza.category }}</small>
+                            </div>
                         </div>
                     </div>
-                    <!-- Duplica questa struttura per gli altri articoli -->
+                    <ng-template #noData>
+                        <p class="text-center text-gray-500 italic">No data available.</p>
+                    </ng-template>
                 </div>
-            </div>
-            <div id="tab-2" class="tab-pane fade">
-                <!-- Contenuto del tab 2 -->
-            </div>
-            <div id="tab-3" class="tab-pane fade">
-                <!-- Contenuto del tab 3 -->
+                <div *ngIf="activeTab === 'tab-2'" id="tab-2" class="tab-pane fade">
+                    <div *ngIf="data.length > 0; else noData">
+                        <div *ngFor="let pizza of data" class="flex items-center p-4 bg-white shadow rounded">
+                            <img class="w-20 h-20 rounded" src="assets/menu-1.jpg" alt="Menu item">
+                            <div class="ml-4">
+                                <h5 class="flex justify-between items-center border-b pb-2">
+                                    <span class="font-medium">{{ pizza.name }}</span>
+                                    <span class="text-primary">${{ pizza.price }}</span>
+                                </h5>
+                                <small class="text-gray-500 italic">Category: {{ pizza.category }}</small>
+                            </div>
+                        </div>
+                    </div>
+                    <ng-template #noData>
+                        <p class="text-center text-gray-500 italic">No data available.</p>
+                    </ng-template>
+                </div>
+
+                <div id="tab-3" class="tab-pane fade">
+                    <!-- Contenuto del tab 3 -->
+                </div>
             </div>
         </div>
     </div>
-</div>

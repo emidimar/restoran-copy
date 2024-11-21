@@ -5,12 +5,11 @@
             <i class="fa fa-utensils mr-3"></i>Restoran
         </a>
 
-        <!-- Toggle Button for Mobile -->
+        <!-- Toggle Button -->
         <button class="lg:hidden text-white" (click)="toggleMenu()">
             <i class="fa fa-bars"></i>
         </button>
 
-        <!-- Links -->
         <div class="flex flex-row gap-4 font-medium font-primary text-sm">
             <div class="lg:flex lg:items-center lg:gap-6 lg:static lg:visible lg:h-auto lg:w-auto"
                 [class.hidden]="!menuOpen">
@@ -18,6 +17,7 @@
                 <a routerLink="/about" class="block py-2 text-white hover:text-primary">ABOUT</a>
                 <a routerLink="/services" class="block py-2 text-white hover:text-primary">SERVICES</a>
                 <a routerLink="/menu" class="block py-2 text-white hover:text-primary">MENU</a>
+
                 <!-- Dropdown for Pages -->
                 <div class="relative group">
                     <button class="block py-2 text-white hover:text-primary">PAGES</button>

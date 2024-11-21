@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuServiceService } from '../service/menu-service.service';
 
+export interface Pizza {
+  id: number;
+  category: string;
+  name: string;
+  price: number;
+  topping: string[];
+  rank: number;
+}
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent {
-  data!: [
-    id: Number,
-    category: String,
-    name: String,
-    price: Number,
-    topping: Array<String>,
-    rank: Number
-  ];
+export class MenuComponent implements OnInit {
+  data: Array<Pizza> = [];
 
   activeTab: string = 'tab-1';
 

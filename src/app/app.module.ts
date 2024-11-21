@@ -16,6 +16,7 @@ import { HeroComponent } from './hero/hero.component';
 import { InfoCardComponent } from './ui/info-card/info-card.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { ServicesRestorantComponent } from './servicesRestorant/services-restorant/services-restorant.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,9 @@ import { ServicesRestorantComponent } from './servicesRestorant/services-restora
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -37,23 +37,23 @@
                     <h4 class="text-primary font-third text-2xl">Contact</h4>
                     <div class="w-11 h-0.5 ml-2 bg-primary"></div>
                 </div>
-                <p class=""><i class="fa fa-map-marker-alt mr-3 mb-2"></i>123 Street, New York, USA</p>
-                <p class=""><i class="fa fa-phone-alt mr-3 mb-2"></i>+012 345 67890</p>
-                <p class=""><i class="fa fa-envelope mr-3 mb-2"></i>info@example.com</p>
+                <p><i class="fa fa-map-marker-alt mr-3 mb-2"></i>{{contact.address}}</p>
+                <p><i class="fa fa-phone-alt mr-3 mb-2"></i>{{contact.phone}}</p>
+                <p><i class="fa fa-envelope mr-3 mb-2"></i>{{contact.email}}</p>
                 <div class="flex space-x-2 pt-2">
-                    <a href="#"
+                    <a href="{{contact.social.twitter}}"
                         class="w-9 h-9 flex items-center justify-center text-white border-2 rounded-full hover:bg-white group">
                         <i class="fab fa-twitter group-hover:text-primary"></i>
                     </a>
-                    <a href="#"
+                    <a href="{{contact.social.facebook}}"
                         class="w-9 h-9 flex items-center justify-center text-white border-2 rounded-full hover:bg-white group">
                         <i class="fab fa-facebook-f group-hover:text-primary"></i>
                     </a>
-                    <a href="#"
+                    <a href="{{contact.social.youtube}}"
                         class="w-9 h-9 flex items-center justify-center text-white border-2 rounded-full hover:bg-white group">
                         <i class="fab fa-youtube group-hover:text-primary"></i>
                     </a>
-                    <a href="#"
+                    <a href="{{contact.social.linkedin}}"
                         class="w-9 h-9 flex items-center justify-center text-white border-2 rounded-full hover:bg-white group">
                         <i class="fab fa-linkedin-in group-hover:text-primary"></i>
                     </a>
@@ -93,11 +93,10 @@
     <div class="container mx-auto py-6">
         <div class="border-t border-gray-700 flex py-6 flex-col md:flex-row justify-between items-center">
             <div class="text-center md:text-left px-3 mb-3 md:mb-0">
-                © <a class="text-primary border-b border-primary" href="#">Your Site Name</a>, All Right Reserved.
-                Designed By <a class="text-primary border-b border-primary" href="https://htmlcodex.com">HTML Codex</a>
+                © <a href="#">Your Site Name</a>, All Right Reserved.
+                Designed By <a href="https://htmlcodex.com">HTML Codex</a>
                 <br><br>
-                Distributed By <a class="text-primary border-b border-primary" href="https://themewagon.com"
-                    target="_blank">ThemeWagon</a>
+                Distributed By <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
             </div>
             <div class="footer-menu text-center md:text-right space-x-4">
                 <a class="hover:text-white" href="#">Home</a>

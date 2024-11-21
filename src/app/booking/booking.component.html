@@ -10,34 +10,36 @@
                 </button>
             </div>
         </div>
+
         <!-- Form Section -->
         <div class="w-full md:w-1/2 bg-gray-800 text-white p-8">
             <h5 class="text-lg font-semibold text-primary">Reservation</h5>
             <h1 class="text-3xl font-bold mb-6">Book A Table Online</h1>
-            <form>
+
+            <form #bookingForm="ngForm" (ngSubmit)="onSubmit(bookingForm)">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <!-- Name Input -->
                     <div>
-                        <label for="name" class="block mb-1 text-sm">Your Name</label>
-                        <input type="text" id="name" placeholder="Your Name"
+                        <label class="block mb-1 text-sm">Your Name</label>
+                        <input type="text" name="name" placeholder="Your Name" ngModel required
                             class="w-full p-3 rounded bg-gray-700 border-none text-white placeholder-gray-400 focus:ring-2 focus:ring-primary" />
                     </div>
                     <!-- Email Input -->
                     <div>
-                        <label for="email" class="block mb-1 text-sm">Your Email</label>
-                        <input type="email" id="email" placeholder="Your Email"
+                        <label class="block mb-1 text-sm">Your Email</label>
+                        <input type="email" name="email" placeholder="Your Email" ngModel required email
                             class="w-full p-3 rounded bg-gray-700 border-none text-white placeholder-gray-400 focus:ring-2 focus:ring-primary" />
                     </div>
                     <!-- Date & Time -->
                     <div>
-                        <label for="datetime" class="block mb-1 text-sm">Date & Time</label>
-                        <input type="text" id="datetime" placeholder="Date & Time"
+                        <label class="block mb-1 text-sm">Date & Time</label>
+                        <input type="date" name="datetime" placeholder="Date & Time" ngModel required
                             class="w-full p-3 rounded bg-gray-700 border-none text-white placeholder-gray-400 focus:ring-2 focus:ring-primary" />
                     </div>
                     <!-- No Of People -->
                     <div>
-                        <label for="select1" class="block mb-1 text-sm">No Of People</label>
-                        <select id="select1"
+                        <label class="block mb-1 text-sm">N. Of People</label>
+                        <select name="people" ngModel required
                             class="w-full p-3 rounded bg-gray-700 border-none text-white focus:ring-2 focus:ring-primary">
                             <option value="1">1 Person</option>
                             <option value="2">2 People</option>
@@ -47,14 +49,14 @@
                     </div>
                     <!-- Special Request -->
                     <div class="col-span-2">
-                        <label for="message" class="block mb-1 text-sm">Special Request</label>
-                        <textarea id="message" placeholder="Special Request"
+                        <label class="block mb-1 text-sm">Special Request</label>
+                        <textarea name="message" placeholder="Special Request" ngModel
                             class="w-full p-3 rounded bg-gray-700 border-none text-white placeholder-gray-400 focus:ring-2 focus:ring-primary h-24"></textarea>
                     </div>
                 </div>
                 <!-- Submit Button -->
                 <div class="mt-6">
-                    <button type="submit"
+                    <button type="submit" [disabled]="!bookingForm.valid"
                         class="w-full py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded transition duration-300">
                         Book Now
                     </button>
